@@ -1,0 +1,33 @@
+
+
+<table class="table">
+<thead class="thead-dark">
+    <tr>
+        <th scope="col">{{"Id"}}</th>
+    <th scope="col">{{"Client Id"}}</th>
+    <th scope="col">{{"Employee Id"}}</th>
+    <th scope="col">{{"Interaction Type"}}</th>
+    <th scope="col">{{"Interaction Date"}}</th>
+    <th scope="col">{{"Remarks"}}</th>
+    
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let interaction of interactions">
+        <td>{{interaction.id}}</td>
+
+        <td>
+            <a [routerLink]="['/clients/',interaction.clientId]" routerLinkActive="active">
+            {{interaction.clientId}}</a>
+        </td>
+        <td>
+            <a [routerLink]="['/employees/',interaction.empId]" routerLinkActive="active">
+            {{interaction.empId}}</a>
+        </td>
+        <td>{{interaction.intType}}</td>
+        <td>{{interaction.intDate}}</td>
+        <td>{{interaction.remarks}}</td>
+        
+    </tr>
+</tbody>
+</table>
